@@ -1,0 +1,51 @@
+<!DOCTYPE catalog
+    PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+           "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+    <system systemId="http://schema.samply.de/common/RangeAttribute.xsd" uri="src/main/resources/xsd/common/RangeAttribute.xsd" />
+    <system systemId="http://schema.samply.de/common/MultivalueAttribute.xsd" uri="src/main/resources/xsd/common/MultivalueAttribute.xsd" />
+    <system systemId="http://schema.samply.de/common/Attribute.xsd" uri="src/main/resources/xsd/common/Attribute.xsd" />
+    <system systemId="http://schema.samply.de/common/Error.xsd" uri="src/main/resources/xsd/common/Error.xsd" />
+    <system systemId="http://schema.samply.de/common/Inquiry.xsd" uri="src/main/resources/xsd/common/Inquiry.xsd" />
+    <system systemId="http://schema.samply.de/common/MdrKey.xsd" uri="src/main/resources/xsd/common/MdrKey.xsd" />
+    <system systemId="http://schema.samply.de/common/Query.xsd" uri="src/main/resources/xsd/common/Query.xsd" />
+    <system systemId="http://schema.samply.de/common/QueryResultStatistic.xsd" uri="src/main/resources/xsd/common/QueryResultStatistic.xsd" />
+    <system systemId="http://schema.samply.de/common/Value.xsd" uri="src/main/resources/xsd/common/Value.xsd" />
+
+    <system systemId="http://schema.samply.de/osse/RangeAttribute.xsd" uri="src/main/resources/xsd/osse/RangeAttribute.xsd" />
+    <system systemId="http://schema.samply.de/osse/MultivalueAttribute.xsd" uri="src/main/resources/xsd/osse/MultivalueAttribute.xsd" />
+    <system systemId="http://schema.samply.de/osse/Attribute.xsd" uri="src/main/resources/xsd/osse/Attribute.xsd" />
+    <system systemId="http://schema.samply.de/osse/Case.xsd" uri="src/main/resources/xsd/osse/Case.xsd" />
+    <system systemId="http://schema.samply.de/osse/Container.xsd" uri="src/main/resources/xsd/osse/Container.xsd" />
+    <system systemId="http://schema.samply.de/osse/Entity.xsd" uri="src/main/resources/xsd/osse/Entity.xsd" />
+    <system systemId="http://schema.samply.de/osse/Error.xsd" uri="src/main/resources/xsd/osse/Error.xsd" />
+    <system systemId="http://schema.samply.de/osse/Inquiry.xsd" uri="src/main/resources/xsd/osse/Inquiry.xsd" />
+    <system systemId="http://schema.samply.de/osse/MdrKey.xsd" uri="src/main/resources/xsd/osse/MdrKey.xsd" />
+    <system systemId="http://schema.samply.de/osse/Patient.xsd" uri="src/main/resources/xsd/osse/Patient.xsd" />
+    <system systemId="http://schema.samply.de/osse/QueryResultStatistic.xsd" uri="src/main/resources/xsd/osse/QueryResultStatistic.xsd" />
+    <system systemId="http://schema.samply.de/osse/QueryResult.xsd" uri="src/main/resources/xsd/osse/QueryResult.xsd" />
+    <system systemId="http://schema.samply.de/osse/Query.xsd" uri="src/main/resources/xsd/osse/Query.xsd" />
+    <system systemId="http://schema.samply.de/osse/RorMetareg.xsd" uri="src/main/resources/xsd/osse/RorMetareg.xsd" />
+    <system systemId="http://schema.samply.de/osse/Sample.xsd" uri="src/main/resources/xsd/osse/Sample.xsd" />
+    <system systemId="http://schema.samply.de/osse/Value.xsd" uri="src/main/resources/xsd/osse/Value.xsd" />
+
+
+    <system systemId="http://schema.samply.de/ccp/RangeAttribute.xsd" uri="src/main/resources/xsd/ccp/RangeAttribute.xsd" />
+    <system systemId="http://schema.samply.de/ccp/MultivalueAttribute.xsd" uri="src/main/resources/xsd/ccp/MultivalueAttribute.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Attribute.xsd" uri="src/main/resources/xsd/ccp/Attribute.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Case.xsd" uri="src/main/resources/xsd/ccp/Case.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Container.xsd" uri="src/main/resources/xsd/ccp/Container.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Entity.xsd" uri="src/main/resources/xsd/ccp/Entity.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Error.xsd" uri="src/main/resources/xsd/ccp/Error.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Inquiry.xsd" uri="src/main/resources/xsd/ccp/Inquiry.xsd" />
+    <system systemId="http://schema.samply.de/ccp/MdrKey.xsd" uri="src/main/resources/xsd/ccp/MdrKey.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Patient.xsd" uri="src/main/resources/xsd/ccp/Patient.xsd" />
+    <system systemId="http://schema.samply.de/ccp/QueryResultStatistic.xsd" uri="src/main/resources/xsd/ccp/QueryResultStatistic.xsd" />
+    <system systemId="http://schema.samply.de/ccp/QueryResult.xsd" uri="src/main/resources/xsd/ccp/QueryResult.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Query.xsd" uri="src/main/resources/xsd/ccp/Query.xsd" />
+    <system systemId="http://schema.samply.de/ccp/RorMetareg.xsd" uri="src/main/resources/xsd/ccp/RorMetareg.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Sample.xsd" uri="src/main/resources/xsd/ccp/Sample.xsd" />
+    <system systemId="http://schema.samply.de/ccp/Value.xsd" uri="src/main/resources/xsd/ccp/Value.xsd" />
+
+</catalog>

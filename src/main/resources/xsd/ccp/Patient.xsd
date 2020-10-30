@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_case="http://schema.samply.de/ccp/Case"
+  xmlns:samply_entity="http://schema.samply.de/ccp/Entity"
+  xmlns:samply_sample="http://schema.samply.de/ccp/Sample"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/ccp/Patient"
+  version="1.0" xmlns="http://schema.samply.de/ccp/Patient" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.ccp"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="Patient">
+    <xs:complexContent>
+      <xs:extension base="samply_entity:Entity">
+        <xs:attribute name="dktk_id" type="xs:string" use="optional"/>
+        <xs:attribute name="centraxx_id" type="xs:string" use="optional"/>
+        <xs:attribute name="idType" type="xs:string" use="optional"/>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_case:Case"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_sample:Sample"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Patient" type="Patient"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Case"
+    schemaLocation="http://schema.samply.de/ccp/Case.xsd"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Sample"
+    schemaLocation="http://schema.samply.de/ccp/Sample.xsd"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Entity"
+    schemaLocation="http://schema.samply.de/ccp/Entity.xsd"/>
+</xs:schema>

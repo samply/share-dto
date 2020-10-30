@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_attribute="http://schema.samply.de/ccp/Attribute"
+  xmlns:samply_container="http://schema.samply.de/ccp/Container"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/ccp/Entity"
+  version="1.0" xmlns="http://schema.samply.de/ccp/Entity" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.ccp"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="Ref">
+    <xs:choice>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EntityId" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Entity">
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_attribute:Attribute"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_container:Container"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Ref" type="Ref"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Entity" type="Entity"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Attribute"
+    schemaLocation="http://schema.samply.de/ccp/Attribute.xsd"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Container"
+    schemaLocation="http://schema.samply.de/ccp/Container.xsd"/>
+</xs:schema>

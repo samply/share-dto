@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_mdrkey="http://schema.samply.de/osse/MdrKey"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  targetNamespace="http://schema.samply.de/osse/Error"
+  version="1.0" xmlns="http://schema.samply.de/osse/Error" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.osse"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="ErrorAttachment">
+    <xs:sequence>
+      <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="skip"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error">
+    <xs:complexType>
+      <xs:attribute name="errorCode" type="xs:int" use="required"/>
+      <xs:sequence>
+        <xs:element name="Description"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_mdrkey:MdrKey"/>
+        <xs:element minOccurs="0" name="extension" type="ErrorAttachment"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:import namespace="http://schema.samply.de/osse/MdrKey"
+    schemaLocation="http://schema.samply.de/osse/MdrKey.xsd"/>
+</xs:schema>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_entity="http://schema.samply.de/osse/Entity"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/osse/Container"
+  version="1.0" xmlns="http://schema.samply.de/osse/Container" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.osse"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="Container">
+    <xs:complexContent>
+      <xs:extension base="samply_entity:Entity">
+        <xs:attribute name="designation" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Container" type="Container"/>
+  <xs:import namespace="http://schema.samply.de/osse/Entity"
+    schemaLocation="http://schema.samply.de/osse/Entity.xsd"/>
+</xs:schema>

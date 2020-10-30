@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_mdrkey="http://schema.samply.de/ccp/MdrKey"
+  xmlns:samply_value="http://schema.samply.de/ccp/Value"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/ccp/MultivalueAttribute" version="1.0" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.ccp"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MultivalueAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="samply_mdrkey:MdrKey"/>
+        <xs:element maxOccurs="unbounded" minOccurs="1" ref="samply_value:Value"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:import namespace="http://schema.samply.de/ccp/MdrKey"
+    schemaLocation="http://schema.samply.de/ccp/MdrKey.xsd"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Value"
+    schemaLocation="http://schema.samply.de/ccp/Value.xsd"/>
+</xs:schema>

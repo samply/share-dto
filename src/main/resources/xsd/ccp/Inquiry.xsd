@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_query="http://schema.samply.de/ccp/Query"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://schema.samply.de/ccp/Inquiry"
+  version="1.0" xmlns="http://schema.samply.de/ccp/Inquiry" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.ccp"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+
+  <xs:complexType name="contact">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="title" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="firstname" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="lastname" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="phone" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="email" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="organization" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="info">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="Label" type="xs:string"></xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Description" type="xs:string"></xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Revision" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Inquiry">
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="revision" type="xs:string" use="required"/>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" ref="samply_query:Query"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ExposeURL" type="xs:string"></xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Author" type="contact"></xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Label" type="xs:string"></xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Description" type="xs:string"></xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SearchFor"
+        type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Contact" type="contact"/>
+
+  <xs:element name="Info" type="info"/>
+
+  <xs:element name="Inquiry" type="Inquiry"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Query"
+    schemaLocation="http://schema.samply.de/ccp/Query.xsd"/>
+</xs:schema>

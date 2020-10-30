@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/bbmri/BBMRIResult"
+  version="1.0"
+  xmlns="http://schema.samply.de/bbmri/BBMRIResult" jxb:version="2.1">
+
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.bbmri"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="bbmriResult">
+
+    <xs:complexType>
+      <xs:sequence maxOccurs="1" minOccurs="1">
+
+        <xs:element maxOccurs="1" minOccurs="1" name="queryId" type="xs:int">
+          <xs:annotation>
+            <xs:documentation>The ID of the query</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="1" minOccurs="1" name="directoryCollectionId" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>The ID/URN the collection has in the directory</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="1" minOccurs="1" name="numberOfSamples" type="xs:int">
+          <xs:annotation>
+            <xs:documentation>
+              Number of samples found.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="1" minOccurs="1" name="numberOfDonors" type="xs:int">
+          <xs:annotation>
+            <xs:documentation>Number of donors found</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="1" minOccurs="1" name="negotiatorQueryId" type="xs:int">
+          <xs:annotation>
+            <xs:documentation>The Negotiator ID of the query</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,155 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>share-dto</artifactId>
+
+    <dependencies>
+        <dependency>
+            <artifactId>slf4j-api</artifactId>
+            <groupId>org.slf4j</groupId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>commons-lang3</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <!-- Tests -->
+        <dependency>
+            <artifactId>java-hamcrest</artifactId>
+            <groupId>org.hamcrest</groupId>
+            <version>${java-hamcrest.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>hamcrest-junit</artifactId>
+            <groupId>org.hamcrest</groupId>
+            <version>${java-hamcrest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api.version}</version>
+        </dependency>
+
+    </dependencies>
+    <description>The data transfer objects used in Samply.Share.Client and Samply.Store.REST
+    </description>
+
+    <developers>
+        <developer>
+            <email>d.tas@dkfz-heidelberg.de</email>
+            <name>Deniz Tas</name>
+            <organization>German Cancer Research Center</organization>
+            <organizationUrl>https://www.dkfz.de/en/</organizationUrl>
+        </developer>
+    </developers>
+    <distributionManagement>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <name>Samply Share Data Transfer Objects</name>
+    <organization>
+        <name>Samply Community</name>
+    </organization>
+
+    <parent>
+        <groupId>de.samply</groupId>
+        <artifactId>parent</artifactId>
+        <version>11.1.0</version>
+    </parent>
+
+    <properties>
+        <skipTests>false</skipTests>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <hamcrest-junit.version>4.12</hamcrest-junit.version>
+        <java-hamcrest.version>2.0.0.0</java-hamcrest.version>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <junit-jupiter-api.version>5.7.0</junit-jupiter-api.version>
+        <jaxb-api.version>2.3.1</jaxb-api.version>
+    </properties>
+    <scm>
+        <connection>scm:git:https://github.com/samply/share-dto.git</connection>
+        <developerConnection>scm:git:https://github.com/samply/share-dto.git</developerConnection>
+        <url>https://github.com/samply/share-dto</url>
+    </scm>
+
+
+    <url>https://github.com/samply/share-dto</url>
+
+    <version>5.0.0</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.14.0</version>
+                <configuration>
+                    <schemaDirectory>src/main/resources/xsd/</schemaDirectory>
+                    <schemaIncludes>
+                        <schemaInclude>global.xsd</schemaInclude>
+
+                        <schemaInclude>common/Inquiry.xsd</schemaInclude>
+                        <schemaInclude>common/Error.xsd</schemaInclude>
+                        <schemaInclude>common/QueryResultStatistic.xsd</schemaInclude>
+
+                        <schemaInclude>ccp/Patient.xsd</schemaInclude>
+                        <schemaInclude>osse/QueryResult.xsd</schemaInclude>
+                        <schemaInclude>osse/QueryResultStatistic.xsd</schemaInclude>
+                        <schemaInclude>osse/Inquiry.xsd</schemaInclude>
+                        <schemaInclude>osse/RorMetareg.xsd</schemaInclude>
+                        <schemaInclude>osse/Error.xsd</schemaInclude>
+
+                        <schemaInclude>ccp/QueryResult.xsd</schemaInclude>
+                        <schemaInclude>ccp/Inquiry.xsd</schemaInclude>
+                        <schemaInclude>ccp/Error.xsd</schemaInclude>
+
+                        <schemaInclude>bbmri/BBMRIResult.xsd</schemaInclude>
+                    </schemaIncludes>
+                    <generateDirectory>src/main/java/</generateDirectory>
+                    <catalog>catalog.xml</catalog>
+                    <episode>true</episode>
+                    <locale>en</locale>
+                    <args>
+                        <arg>-no-header</arg>
+                    </args>
+                    <strict>false</strict>
+                    <episodeFile>src/main/resources/META-INF/sun-jaxb.episode</episodeFile>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <configuration>
+                    <excludes combine.children="append">
+                        <exclude>src/main/resources/xsd/**</exclude>
+                        <exclude>catalog.xml</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

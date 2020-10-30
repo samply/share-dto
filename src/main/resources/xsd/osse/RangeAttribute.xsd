@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_mdrkey="http://schema.samply.de/osse/MdrKey"
+  xmlns:samply_value="http://schema.samply.de/osse/Value"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/osse/RangeAttribute"
+  version="1.0" jxb:version="2.1">
+
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.osse"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RangeAttribute">
+    <xs:complexType>
+      <xs:all>
+        <xs:element maxOccurs="1" minOccurs="1" ref="samply_mdrkey:MdrKey"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="samply_value:LowerBound"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="samply_value:UpperBound"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:import namespace="http://schema.samply.de/osse/MdrKey"
+    schemaLocation="http://schema.samply.de/osse/MdrKey.xsd"/>
+  <xs:import namespace="http://schema.samply.de/osse/Value"
+    schemaLocation="http://schema.samply.de/osse/Value.xsd"/>
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_patient="http://schema.samply.de/ccp/Patient"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/ccp/QueryResult" version="1.0"
+  xmlns="http://schema.samply.de/ccp/QueryResult" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:bindings node="//xs:element[@name='QueryResult']">
+        <xs:annotate>
+          <xs:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="QueryResult"/>
+        </xs:annotate>
+      </jxb:bindings>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.ccp"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="QueryResult">
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_patient:Patient"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResult" type="QueryResult"/>
+  <xs:import namespace="http://schema.samply.de/ccp/Patient"
+    schemaLocation="http://schema.samply.de/ccp/Patient.xsd"/>
+</xs:schema>

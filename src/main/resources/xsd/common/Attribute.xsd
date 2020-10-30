@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_mdrkey="http://schema.samply.de/common/MdrKey"
+  xmlns:samply_value="http://schema.samply.de/common/Value"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/common/Attribute" version="1.0" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.query.common"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Attribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="samply_mdrkey:MdrKey"/>
+        <xs:element ref="samply_value:Value"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:import namespace="http://schema.samply.de/common/MdrKey"
+    schemaLocation="http://schema.samply.de/common/MdrKey.xsd"/>
+  <xs:import namespace="http://schema.samply.de/common/Value"
+    schemaLocation="http://schema.samply.de/common/Value.xsd"/>
+</xs:schema>

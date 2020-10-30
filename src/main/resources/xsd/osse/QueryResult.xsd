@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:samply_entity="http://schema.samply.de/osse/Entity"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/osse/QueryResult" version="1.0"
+  xmlns="http://schema.samply.de/osse/QueryResult" jxb:version="2.1">
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.osse"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="QueryResult">
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="samply_entity:Entity"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResult" type="QueryResult"/>
+  <xs:import namespace="http://schema.samply.de/osse/Entity"
+    schemaLocation="http://schema.samply.de/osse/Entity.xsd"/>
+</xs:schema>

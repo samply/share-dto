@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schema.samply.de/osse/QueryResultStatistic"
+  version="1.0"
+  xmlns="http://schema.samply.de/osse/QueryResultStatistic" jxb:version="2.1">
+
+  <xs:annotation>
+    <xs:appinfo>
+      <jxb:schemaBindings>
+        <jxb:package name="de.samply.share.model.osse"/>
+      </jxb:schemaBindings>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="queryResultStatistic">
+
+    <xs:complexType>
+      <xs:sequence maxOccurs="1" minOccurs="1">
+
+        <xs:element maxOccurs="1" minOccurs="1" name="requestId" type="xs:string">
+          <xs:annotation>
+            <xs:documentation></xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="1" minOccurs="1" name="numberOfPages" type="xs:int">
+          <xs:annotation>
+            <xs:documentation>
+              Number of pages of this QueryResult. The default page size is 50. The last page can
+              have
+              less than 50
+              elements.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element maxOccurs="1" minOccurs="1" name="totalSize" type="xs:int">
+          <xs:annotation>
+            <xs:documentation>Total size of single elements within this QueryResult
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+
+  </xs:element>
+</xs:schema>
+
