@@ -1,3 +1,4 @@
+UNMERGED BRANCH -CHANGES FROM OTHER SAMPLY TEAMS MISSING
 # Samply Share DTO
 
 This library offers data transfer objects for Samply Share Broker/Client and
