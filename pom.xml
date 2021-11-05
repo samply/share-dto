@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>share-dto</artifactId>
-  <version>5.1.0</version>
+  <version>5.2.0</version>
 
   <name>Samply Share Data Transfer Objects</name>
   <description>The data transfer objects used in Samply.Share.Client and Samply.Store.REST
@@ -52,12 +52,9 @@
   </distributionManagement>
 
   <properties>
-    <skipTests>false</skipTests>
-    <commons-lang3.version>3.7</commons-lang3.version>
-    <hamcrest-junit.version>4.12</hamcrest-junit.version>
-    <java-hamcrest.version>2.0.0.0</java-hamcrest.version>
-    <slf4j-api.version>1.7.25</slf4j-api.version>
-    <junit-jupiter-api.version>5.7.0</junit-jupiter-api.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
+    <slf4j-api.version>1.7.32</slf4j-api.version>
+    <junit-jupiter-api.version>5.8.1</junit-jupiter-api.version>
     <jaxb-api.version>2.3.1</jaxb-api.version>
   </properties>
 
@@ -75,25 +72,16 @@
 
     <!-- Tests -->
     <dependency>
-      <artifactId>java-hamcrest</artifactId>
-      <groupId>org.hamcrest</groupId>
-      <version>${java-hamcrest.version}</version>
-    </dependency>
-    <dependency>
-      <artifactId>hamcrest-junit</artifactId>
-      <groupId>org.hamcrest</groupId>
-      <version>${java-hamcrest.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit-jupiter-api.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-      <version>${jaxb-api.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-jupiter-api.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
