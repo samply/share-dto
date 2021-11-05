@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>share-dto</artifactId>
-  <version>5.1.0</version>
+  <version>5.2.0</version>
 
   <name>Samply Share Data Transfer Objects</name>
   <description>The data transfer objects used in Samply.Share.Client and Samply.Store.REST
