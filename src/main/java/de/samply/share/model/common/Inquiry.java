@@ -39,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Inquiry", namespace = "http://schema.samply.de/common/Inquiry", propOrder = {
     "query",
     "cqlQueryList",
+    "structuredQuery",
     "exposeUrl",
     "author",
     "label",
@@ -56,6 +57,9 @@ public class Inquiry
 
   @XmlElement(name = "cqlQueryList", namespace = "http://schema.samply.de/cql/CqlQueryList")
   protected CqlQueryList cqlQueryList;
+
+  @XmlElement(name = "StructuredQuery")
+  protected String structuredQuery;
 
   @XmlElement(name = "ExposeURL", required = true)
   protected String exposeUrl;
@@ -102,6 +106,24 @@ public class Inquiry
 
   public void setCqlQueryList(CqlQueryList cqlQueryList) {
     this.cqlQueryList = cqlQueryList;
+  }
+
+  /**
+   * Gets the value of the structuredQuery property.
+   *
+   * @return possible object is {@link String }
+   */
+  public String getStructuredQuery() {
+    return structuredQuery;
+  }
+
+  /**
+   * Sets the value of the structuredQuery property.
+   *
+   * @param structuredQuery allowed object is {@link String }
+   */
+  public void setStructuredQuery(String structuredQuery) {
+    this.structuredQuery = structuredQuery;
   }
 
   /**
