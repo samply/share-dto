@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.3.0 - 2022-01-21]
+### Added
+- Add Structured Query Property to Common Inquiry
+
 ## [5.2.0 - 2021-11-05]
 ### Changed
 - Cleanup dependencies
